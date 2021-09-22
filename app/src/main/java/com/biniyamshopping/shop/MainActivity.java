@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     Button guest;
     CountryCodePicker ccp;
     private FirebaseAuth.AuthStateListener authListener;
-String codesent;
+    String codesent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

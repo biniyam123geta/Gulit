@@ -6,13 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.github.angads25.toggle.widget.LabeledSwitch;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
@@ -29,6 +32,7 @@ boolean color; InterstitialAd ad;
     private DatabaseReference mDatabaseRef;
     private Context mContext;
     private List<Messages> mUploads;
+
     public DisplayAdapter(Context context, List<Messages> uploads) {
         mContext = context;
         mUploads = uploads;
@@ -53,13 +57,13 @@ boolean color; InterstitialAd ad;
          String  condition=uploadCurrent.getCond();
         // holder.cond.setText(condition);
         holder.desc.setText(uploadCurrent.getDesc());
-//        holder.location.setText(uploadCurrent.getCit());
+        holder.location.setText(uploadCurrent.getCit());
         holder.price.setText(uploadCurrent.getPrice()+" Birr");
         Messages selecteditem=mUploads.get(position);
         final String  selectedkey=selecteditem.getKey();
         MobileAds.initialize(mContext,"ca-app-pub-6002206915132015~3669917621");
-        AdRequest adRequest = new AdRequest.Builder().build();
-        holder.mAdView.loadAd(adRequest);
+       /// AdRequest adRequest = new AdRequest.Builder().build();
+       // holder.mAdView.loadAd(adRequest);
 
       //  MobileAds.initialize(mContext,"ca-app-pub-6002206915132015~3669917621");
       //  AdRequest adRequest = new AdRequest.Builder().build();
@@ -77,33 +81,26 @@ boolean color; InterstitialAd ad;
                 //.centerCrop()
                 .into(holder.im);
 
-            holder.star.setColorFilter(mContext.getResources().getColor(R.color.green));
+           // holder.star.setColorFilter(mContext.getResources().getColor(R.color.green));
+holder.mLabeledSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        db = new SqlDatabase(mContext);
+        if (isChecked) {
+            boolean r = db.insertdata(holder.txtdata.getText().toString(), holder.price.getText().toString(), holder.desc.getText().toString(), selectedkey);
+            if (r == true) {
 
-        holder.star.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                db = new SqlDatabase(mContext);
-   boolean ch=db.checkIfRecordExist(selectedkey);
-                color=ch;
-                if(ch==false) {
+                Toast.makeText(mContext, "succesfully added to cart", Toast.LENGTH_SHORT).show();
 
-                    boolean r = db.insertdata(holder.txtdata.getText().toString(), holder.price.getText().toString(), holder.desc.getText().toString(), selectedkey);
-                    if (r == true) {
-                        holder.star.setColorFilter(mContext.getResources().getColor(R.color.yellow));
-                        Toast.makeText(mContext, "succesfully added to cart", Toast.LENGTH_SHORT).show();
-
-                    } else {
-                        Toast.makeText(mContext, "not inserted", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                else {
-                    //Toast.makeText(mContext, "already inserted", Toast.LENGTH_SHORT).show();
-                    db.deletData(selectedkey);
-                    holder.star.setColorFilter(mContext.getResources().getColor(R.color.red));
-                    Toast.makeText(mContext, "data deleted from cart", Toast.LENGTH_SHORT).show();
-                }
+            } else {
+                Toast.makeText(mContext, "not inserted", Toast.LENGTH_SHORT).show();
             }
-        });
+        } else {
+            db.deletData(selectedkey);
+            Toast.makeText(mContext, "data deleted from cart", Toast.LENGTH_SHORT).show();
+        }
+    }
+});
+
         holder.call.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -129,16 +126,18 @@ boolean color; InterstitialAd ad;
       public   ImageView im;
       public Button call;
         private AdView mAdView;
-      public   ImageView star;   //private AdView mAdView;
+        private Switch mLabeledSwitch;
+     // public   ImageView star;   //private AdView mAdView;
         public ImageViewHolder(View itemView) {
             super(itemView);
+            mLabeledSwitch = (itemView).findViewById(R.id.status_switch);
             //mAdView=(itemView).findViewById(R.id.adView);
             //itemView.setOnClickListener(ImageAdapter.this);
-            mAdView=(itemView).findViewById(R.id.adView);
-          star=itemView.findViewById(R.id.star);
+           // mAdView=(itemView).findViewById(R.id.adView);
+
             location=itemView.findViewById(R.id.location);
             txtdata=itemView.findViewById(R.id.imname);
-           // cond=itemView.findViewById(R.id.cond);
+            //cond=itemView.findViewById(R.id.cond);
             desc=itemView.findViewById(R.id.desc);
             price=itemView.findViewById(R.id.price);
             im=itemView.findViewById(R.id.im);
