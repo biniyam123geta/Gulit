@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:fillViewport="true">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:layout_margin="15dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0.0px"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="false">
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    tools:context=".Sell">
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/image_border"
+        android:src="@drawable/image"></ImageView>
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_upload"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentLeft="true" />
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:visibility="invisible"
+        android:layout_centerInParent="true"
+        ></ProgressBar>
+    <EditText
+        android:id="@+id/txtdata"
+        android:layout_width="match_parent"
+        android:hint="Item Name "
+        android:layout_gravity="left"
+        android:layout_height="wrap_content"
+        android:gravity="left"></EditText>
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+       android:layout_gravity="left"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:fontFamily="casual"
+       android:background="@drawable/shapelogin"
+        android:text="Item condition" />
+
+
+
+    <!--   Default RadioButtons  -->
+<RadioGroup
+    android:id="@+id/group"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="left"
+    android:onClick="radioaction">
+    <RadioButton
+        android:id="@+id/New"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="New"
+        android:layout_marginTop="5dp"
+        android:onClick="radioaction"
+        android:textSize="15dp" />
+    <RadioButton
+        android:id="@+id/used"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Used"
+        android:layout_marginTop="5dp"
+        android:onClick="radioaction"
+        android:textSize="15dp" />
+
+</RadioGroup>
+
+    <EditText
+        android:id="@+id/type"
+        android:layout_width="match_parent"
+       android:layout_gravity="left"
+
+        android:layout_height="wrap_content"
+        android:hint="Item type"></EditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint="enter phone"
+        android:inputType="numberSigned"
+        android:gravity="left"
+
+        ></EditText>
+        <View
+            android:layout_margin="10dp"
+            android:layout_width="5dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:background="#B8B894" />
+        <EditText
+            android:id="@+id/price"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberSigned"
+            android:gravity="right"
+            ></EditText>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Birr"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:gravity="left"></TextView></LinearLayout>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shapelogin"
+        android:textColor="@color/white"
+        android:layout_gravity="left"
+        android:padding="5dp"
+        android:fontFamily="casual"
+        android:text="Description"
+        android:textStyle="bold"
+        android:gravity="left"></TextView>
+    <EditText
+        android:id="@+id/desc"
+        android:layout_margin="5dp"
+        android:background="@drawable/shapeemail"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="write description here"></EditText>
+    <Button
+        android:onClick="submit"
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_margin="5dp"
+        android:background="@drawable/shapelogin"
+        android:text="POST"></Button>
+</LinearLayout></androidx.cardview.widget.CardView></ScrollView>

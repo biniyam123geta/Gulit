@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/best"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:layout_marginTop="20dp"
+    tools:context=".MainActivity">
+
+   <ImageView
+       android:id="@+id/imageview"
+       android:layout_width="200dp"
+       android:layout_height="200dp"
+       android:layout_alignParentTop="true"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="10dp"
+       android:background="@drawable/shoplogo"
+       >
+   </ImageView>
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:layout_below="@+id/imageview"
+        android:layout_centerInParent="true"
+        ></ProgressBar>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Gulitshopplatform"
+        android:layout_below="@+id/imageview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="180dp"
+        android:layout_marginBottom="30dp"
+        android:textColor="@color/bl"
+        android:textSize="15dp"
+        android:textStyle="bold"></TextView>
+
+<LinearLayout
+    android:id="@+id/linear"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/imageview"
+    android:orientation="vertical"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="20dp"
+    android:padding="15dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/linearborder"
+        android:orientation="horizontal">
+        <com.hbb20.CountryCodePicker android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/cpp"
+
+            app:ccp_defaultLanguage="ENGLISH"
+            app:ccp_defaultNameCode="ETHIOPIA"
+            >
+        </com.hbb20.CountryCodePicker>
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:background="@null"
+            android:padding="5dp"
+            android:drawablePadding="10dp"
+            android:hint="phone"></EditText>
+    </LinearLayout>
+<Button
+    android:id="@+id/getvarcode"
+    android:layout_width="wrap_content"
+    android:layout_margin="5dp"
+    android:layout_height="wrap_content"
+    android:textColor="@color/white"
+    android:text="@string/getvarificationcode"
+    android:background="@drawable/shapelogin"
+    android:textAllCaps="false"></Button>
+    <EditText
+        android:id="@+id/entercode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/linearborder"
+        android:digits="0123456789"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:hint="@string/entervarifcode"
+        android:inputType="number"></EditText>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_margin="5dp"
+        android:background="@drawable/button_gradient2"
+        android:text="@string/submit"></Button>
+    <Button
+        android:id="@+id/guest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/bl"
+       android:layout_gravity="center"
+        android:padding="5dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/button_gradient2"
+        android:text="Guest login"></Button>
+</LinearLayout>
+
+
+</RelativeLayout></ScrollView>

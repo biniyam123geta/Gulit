@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Where">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:layout_margin="15dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0.0px"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="false">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:gravity="center">
+
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:fontFamily="casual"
+        android:textColor="@color/best"
+        android:text="@string/Wheredoyousell" />
+
+    <RadioGroup
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+        <RadioButton
+            android:id="@+id/addis"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/AddisAbeba"
+            android:layout_marginTop="20dp"
+            android:onClick="radioaction"
+            android:textSize="20dp" />
+        <RadioButton
+            android:id="@+id/adama"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Adama"
+            android:layout_marginTop="10dp"
+            android:onClick="radioaction"
+            android:textSize="20dp" />
+        <RadioButton
+            android:id="@+id/bahir"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Bahirdar"
+            android:layout_marginTop="10dp"
+            android:onClick="radioaction"
+            android:textSize="20dp" />
+        <RadioButton
+            android:id="@+id/dire"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Dire"
+            android:layout_marginTop="10dp"
+            android:onClick="radioaction"
+            android:textSize="20dp" />
+        <RadioButton
+            android:id="@+id/hawasa"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Hawasa"
+            android:layout_marginTop="10dp"
+            android:onClick="radioaction"
+            android:textSize="20dp" />
+        <RadioButton
+            android:id="@+id/gondar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Gondar"
+            android:layout_marginTop="10dp"
+            android:onClick="radioaction"
+            android:textSize="20dp" />
+        <RadioButton
+            android:id="@+id/mekele"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Mekele"
+            android:layout_marginTop="10dp"
+            android:onClick="radioaction"
+            android:textSize="20dp" />
+    </RadioGroup>
+    <Button
+        android:id="@+id/select"
+        android:text="select"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:background="@drawable/shapelogin"
+        android:layout_height="wrap_content"></Button>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        android:layout_below="@id/result_list"
+        ads:adUnitId="ca-app-pub-6002206915132015/6595463865">
+    </com.google.android.gms.ads.AdView>
+</LinearLayout>
+    </androidx.cardview.widget.CardView>
+</ScrollView>

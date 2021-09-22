@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:showAsAction="always">
+
+
+    <item
+        android:id="@+id/search"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="always"
+        app:actionViewClass="android.widget.SearchView"
+        android:title="Search"/>
+
+    <item
+    android:id="@+id/select"
+        style="@style/OverflowMenu"
+    android:title="select"
+    app:showAsAction="always"
+    android:icon="@drawable/listicon">
+        <menu >
+            <item android:id="@+id/car" android:title="car"></item>
+            <item android:id="@+id/house" android:title="house"></item>
+            <item android:id="@+id/other" android:title="other"></item>
+        </menu>
+</item>
+    <item
+        style="@style/OverflowMenu"
+        android:id="@+id/city"
+        android:title="select"
+        app:showAsAction="always"
+        android:icon="@drawable/iclocation">
+        <menu >
+            <item android:id="@+id/addis" android:title="Addis Ababa"></item>
+            <item android:id="@+id/adama" android:title="Adama"></item>
+            <item android:id="@+id/bahir" android:title="Bahir Dar"></item>
+            <item android:id="@+id/dire" android:title="Dire Dawa"></item>
+            <item android:id="@+id/awasa" android:title="Awassa"></item>
+            <item android:id="@+id/gondar" android:title="Gondar"></item>
+            <item android:id="@+id/mekele" android:title="Mekele"></item>
+        </menu>
+    </item>
+
+
+
+    <item android:id="@+id/About" android:title="About us"></item>
+    <item android:id="@+id/contact" android:title="Contact us"></item>
+    <item android:id="@+id/logout" android:title="Logout"></item>
+
+
+</menu>

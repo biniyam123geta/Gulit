@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Gulit-ጉሊት</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="action_add_favourite" translatable="false">Add to Favourites</string>
+    <string name="action_play_next" translatable="false">Play Next</string>
+    <string name="backdrop_title" translatable="false">LOVE MUSIC</string>
+    <string name="backdrop_subtitle" translatable="false">This season top 20 albums</string>
+    <string name="title_location_permission" translatable="false">Location permission</string>
+    <string name="text_location_permission" translatable="false">text Location permission</string>
+    <string name="ok" translatable="false">ok</string>
+    <string name="AddisAbeba">Addis Ababa</string>
+    <string name="Adama">Adama</string>
+    <string name="Dire">Dire Dawa</string>
+    <string name="Hawasa">Hawasa</string>
+    <string name="Gondar">Gondar</string>
+    <string name="Mekele">Mekele</string>
+    <string name="Wheredoyousell">Where do you sell?</string>
+    <string name="Search">Search</string>
+    <string name="Select">select</string>
+    <string name="Home">Home</string>
+    <string name="Login">Login</string>
+    <string name="Logout">Logout</string>
+    <string name="Cart">cart</string>
+    <string name="House">House</string>
+    <string name="Call">call</string>
+    <string name="Aboutus">About us</string>
+    <string name="contactus">contact us</string>
+    <string name="price">price</string>
+    <string name="all">All</string>
+    <string name="selectcatagory">select catagories</string>
+    <string name="Car">car></string>
+    <string name="Mobile">mobile</string>
+    <string name="Gulit">Gulit</string>
+    <string name="getvarificationcode">Get Varification code</string>
+    <string name="Gulitshopplatform">Gulit Online shop platform</string>
+    <string name="entervarifcode">enter varification code</string>
+    <string name="submit">Submit</string>
+    <string name="amharic">Amharic</string>
+    <string name="Strings">amh</string>
+</resources>
