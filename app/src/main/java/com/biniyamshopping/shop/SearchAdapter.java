@@ -20,14 +20,16 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ImageViewHolder>{
+public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ImageViewHolder> {
     private DatabaseReference mDatabaseRef;
-    private Context mContext;
-    private List<SearchMessage> mUploads;
+    private final Context mContext;
+    private final List<SearchMessage> mUploads;
+
     public SearchAdapter(Context context, List<SearchMessage> uploads) {
         mContext = context;
         mUploads = uploads;
     }
+
     @NonNull
     @Override
     public SearchAdapter.ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -44,10 +46,10 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ImageViewH
         holder.zoomout.setVisibility(View.INVISIBLE);
         holder.phone.setVisibility(View.INVISIBLE);
         holder.loc.setText(uploadCurrent.getCit());
-        final String  phone=uploadCurrent.getPhone();
+        final String phone = uploadCurrent.getPhone();
 
-        holder.cat.setText("Type: "+uploadCurrent.getCat());
-        holder.price.setText(uploadCurrent.getPrice()+" Birr");
+        holder.cat.setText("Type: " + uploadCurrent.getCat());
+        holder.price.setText(uploadCurrent.getPrice() + " Birr");
         Picasso.get()
                 .load(uploadCurrent.getImageURL())
                 .placeholder(R.mipmap.load_g)
@@ -63,18 +65,18 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ImageViewH
             @Override
             public void onClick(View v) {
 
-                SearchMessage selecteditem=mUploads.get(position);
-                final String  selectedkey=selecteditem.getKey();
-                Intent i=new Intent(mContext,Display_Retrive.class);
-                i.putExtra("value",selectedkey);
-                i.putExtra("position",position);
+                SearchMessage selecteditem = mUploads.get(position);
+                final String selectedkey = selecteditem.getKey();
+                Intent i = new Intent(mContext, Display_Retrive.class);
+                i.putExtra("value", selectedkey);
+                i.putExtra("position", position);
                 mContext.startActivity(i);
             }
         });
         holder.zoom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Animation animation= AnimationUtils.loadAnimation(mContext,R.anim.zoomin);
+                Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.zoomin);
                 holder.price.setVisibility(View.INVISIBLE);
                 holder.name.setVisibility(View.INVISIBLE);
                 holder.cat.setVisibility(View.INVISIBLE);
@@ -85,7 +87,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ImageViewH
         holder.zoomout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Animation animation= AnimationUtils.loadAnimation(mContext,R.anim.zoomout);
+                Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.zoomout);
                 holder.im.startAnimation(animation);
                 holder.zoomout.setVisibility(View.INVISIBLE);
                 holder.price.setVisibility(View.VISIBLE);
@@ -109,8 +111,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ImageViewH
 
                 holder.call.setVisibility(View.INVISIBLE);
                 holder.phone.setVisibility(View.VISIBLE);
-                Intent i=new Intent(mContext,Call.class);
-                i.putExtra("value",phone);
+                Intent i = new Intent(mContext, Call.class);
+                i.putExtra("value", phone);
                 holder.phone.setText(phone);
                 mContext.startActivity(i);
             }
@@ -123,21 +125,22 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ImageViewH
     }
 
     public class ImageViewHolder extends RecyclerView.ViewHolder {
-        public TextView name,price,loc,cat,type;
+        public TextView name, price, loc, cat, type;
         public ImageView im;
-        Button zoom,call,phone,zoomout;
+        Button zoom, call, phone, zoomout;
         private AdView mAdView;
+
         public ImageViewHolder(View itemView) {
             super(itemView);
-            zoom=(itemView).findViewById(R.id.zoom);
-            call=(itemView).findViewById(R.id.call);
-            phone=(itemView).findViewById(R.id.phone);
-            zoomout=(itemView).findViewById(R.id.zoomout);
-            im=itemView.findViewById(R.id.im);
-            loc=itemView.findViewById(R.id.location);
-            cat=itemView.findViewById(R.id.catagory);
-            name=itemView.findViewById(R.id.imagename);
-            price=itemView.findViewById(R.id.price);
+            zoom = (itemView).findViewById(R.id.zoom);
+            call = (itemView).findViewById(R.id.call);
+            phone = (itemView).findViewById(R.id.phone);
+            zoomout = (itemView).findViewById(R.id.zoomout);
+            im = itemView.findViewById(R.id.im);
+            loc = itemView.findViewById(R.id.location);
+            cat = itemView.findViewById(R.id.catagory);
+            name = itemView.findViewById(R.id.imagename);
+            price = itemView.findViewById(R.id.price);
         }
     }
 }

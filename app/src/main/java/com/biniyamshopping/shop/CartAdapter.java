@@ -20,15 +20,16 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ImageViewHolder>{
+public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ImageViewHolder> {
     private DatabaseReference mDatabaseRef;
-    private Context mContext;
-    private List<CartMessage> mUploads;
+    private final Context mContext;
+    private final List<CartMessage> mUploads;
 
     public CartAdapter(Context context, List<CartMessage> uploads) {
         mContext = context;
         mUploads = uploads;
     }
+
     @NonNull
     @Override
     public CartAdapter.ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -45,10 +46,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ImageViewHolde
         holder.zoomout.setVisibility(View.INVISIBLE);
 
         holder.loc.setText(uploadCurrent.getCit());
-        final String  phone=uploadCurrent.getPhone();
+        final String phone = uploadCurrent.getPhone();
 
-        holder.cat.setText("Type: "+uploadCurrent.getCat());
-        holder.price.setText(uploadCurrent.getPrice()+" Birr");
+        holder.cat.setText("Type: " + uploadCurrent.getCat());
+        holder.price.setText(uploadCurrent.getPrice() + " Birr");
         Picasso.get()
                 .load(uploadCurrent.getImageURL())
                 .placeholder(R.mipmap.load_g)
@@ -58,24 +59,24 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ImageViewHolde
                 .into(holder.im);
         //MobileAds.initialize(mContext,"ca-app-pub-6002206915132015~3669917621");
 
-       // AdRequest adRequest = new AdRequest.Builder().build();
-       // holder.mAdView.loadAd(adRequest);
+        // AdRequest adRequest = new AdRequest.Builder().build();
+        // holder.mAdView.loadAd(adRequest);
         holder.im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                CartMessage selecteditem=mUploads.get(position);
-                final String  selectedkey=selecteditem.getKey();
-                Intent i=new Intent(mContext,Display_Retrive.class);
-                i.putExtra("value",selectedkey);
-                i.putExtra("position",position);
+                CartMessage selecteditem = mUploads.get(position);
+                 String selectedkey = selecteditem.getKey();
+                Intent i = new Intent(mContext, DisplayCartRetrive.class);
+                i.putExtra("value", selectedkey);
+                i.putExtra("position", position);
                 mContext.startActivity(i);
             }
         });
         holder.zoom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Animation animation= AnimationUtils.loadAnimation(mContext,R.anim.zoomin);
+                Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.zoomin);
                 holder.price.setVisibility(View.INVISIBLE);
                 holder.name.setVisibility(View.INVISIBLE);
                 holder.cat.setVisibility(View.INVISIBLE);
@@ -86,7 +87,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ImageViewHolde
         holder.zoomout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Animation animation= AnimationUtils.loadAnimation(mContext,R.anim.zoomout);
+                Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.zoomout);
                 holder.im.startAnimation(animation);
                 holder.zoomout.setVisibility(View.INVISIBLE);
                 holder.price.setVisibility(View.VISIBLE);
@@ -99,8 +100,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ImageViewHolde
             @Override
             public void onClick(View v) {
 
-             holder.call.setVisibility(View.INVISIBLE);
-             holder.phone.setVisibility(View.VISIBLE);
+                holder.call.setVisibility(View.INVISIBLE);
+                holder.phone.setVisibility(View.VISIBLE);
                 holder.phone.setText(phone);
             }
         });
@@ -110,8 +111,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ImageViewHolde
 
                 holder.call.setVisibility(View.INVISIBLE);
                 holder.phone.setVisibility(View.VISIBLE);
-                Intent i=new Intent(mContext,Call.class);
-                i.putExtra("value",phone);
+                Intent i = new Intent(mContext, Call.class);
+                i.putExtra("value", phone);
                 holder.phone.setText(phone);
                 mContext.startActivity(i);
             }
@@ -124,22 +125,23 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ImageViewHolde
     }
 
     public class ImageViewHolder extends RecyclerView.ViewHolder {
-        public TextView name,price,loc,cat,type;
+        public TextView name, price, loc, cat, type;
         public ImageView im;
-        Button zoom,call,phone,zoomout;
+        Button zoom, call, phone, zoomout;
         private AdView mAdView;
+
         public ImageViewHolder(View itemView) {
             super(itemView);
-           // mAdView=(itemView).findViewById(R.id.adView);
-            zoom=(itemView).findViewById(R.id.zoom);
-            call=(itemView).findViewById(R.id.call);
-            phone=(itemView).findViewById(R.id.phone);
-            zoomout=(itemView).findViewById(R.id.zoomout);
-            im=itemView.findViewById(R.id.im);
-            loc=itemView.findViewById(R.id.location);
-            cat=itemView.findViewById(R.id.catagory);
-            name=itemView.findViewById(R.id.imagename);
-            price=itemView.findViewById(R.id.price);
+            // mAdView=(itemView).findViewById(R.id.adView);
+            zoom = (itemView).findViewById(R.id.zoom);
+            call = (itemView).findViewById(R.id.call);
+            phone = (itemView).findViewById(R.id.phone);
+            zoomout = (itemView).findViewById(R.id.zoomout);
+            im = itemView.findViewById(R.id.im);
+            loc = itemView.findViewById(R.id.location);
+            cat = itemView.findViewById(R.id.catagory);
+            name = itemView.findViewById(R.id.imagename);
+            price = itemView.findViewById(R.id.price);
         }
     }
 }

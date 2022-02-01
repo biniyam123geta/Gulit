@@ -25,15 +25,18 @@ import androidx.core.content.ContextCompat;
 import androidx.multidex.MultiDex;
 
 public class Splash extends AppCompatActivity implements LocationListener {
+    ///
+    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
+    LocationManager locationManager;
+    String provider;
     private TextView welcome, by;
     private ImageView image;
+
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         MultiDex.install(this);
     }
-    LocationManager locationManager;
-    String provider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +58,9 @@ public class Splash extends AppCompatActivity implements LocationListener {
 
         provider = locationManager.getBestProvider(new Criteria(), false);
 
-Init();
+        Init();
 
-      //
+        //
 
 
     }
@@ -66,15 +69,8 @@ Init();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i=new Intent(Splash.this,MainActivity.class);
+                Intent i = new Intent(Splash.this, MainActivity.class);
                 startActivity(i);
-              //  Intent i=new Intent(Splash.this,MainActivity.class);
-                //startActivity(i);
-               // boolean f=  checkLocationPermission();
-               // if(f){
-                 //   locationEnabled();
-
-               // }
             }
         }, 3000);
 
@@ -86,8 +82,6 @@ Init();
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
-
-            //locationManager.requestLocationUpdates(provider, 400, 1, this);
         }
     }
 
@@ -101,21 +95,13 @@ Init();
             locationManager.removeUpdates(this);
         }
     }
-///
-public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
     public boolean checkLocationPermission() {
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
-
-            // Should we show an explanation?
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                     Manifest.permission.ACCESS_FINE_LOCATION)) {
-
-                // Show an explanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
                 new AlertDialog.Builder(this)
                         .setTitle(R.string.title_location_permission)
                         .setMessage(R.string.text_location_permission)
@@ -133,7 +119,6 @@ public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
 
             } else {
-                // No explanation needed, we can request the permission.
                 ActivityCompat.requestPermissions(this,
                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                         MY_PERMISSIONS_REQUEST_LOCATION);
@@ -147,25 +132,16 @@ public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
+                                           String[] permissions, int[] grantResults) {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_LOCATION: {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    // permission was granted, yay! Do the
-                    // location-related task you need to do.
                     locationEnabled();
-                  //  Intent i=new Intent(Splash.this,MainActivity.class);
-                  //  startActivity(i);
-
                 } else {
                     Toast.makeText(getApplicationContext(), "please set allow location permission", Toast.LENGTH_SHORT).show();
                     checkLocationPermission();
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
-
                 }
                 return;
             }
@@ -193,30 +169,31 @@ public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     public void onProviderDisabled(String provider) {
 
     }
-    private void locationEnabled () {
+
+    private void locationEnabled() {
         LocationManager lm = (LocationManager)
-                getSystemService(Context. LOCATION_SERVICE ) ;
+                getSystemService(Context.LOCATION_SERVICE);
 
         boolean gps_enabled = false;
         boolean network_enabled = false;
         try {
-            gps_enabled = lm.isProviderEnabled(LocationManager. GPS_PROVIDER ) ;
+            gps_enabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER);
         } catch (Exception e) {
-            e.printStackTrace() ;
+            e.printStackTrace();
         }
         try {
-            network_enabled = lm.isProviderEnabled(LocationManager. NETWORK_PROVIDER ) ;
+            network_enabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
         } catch (Exception e) {
-            e.printStackTrace() ;
+            e.printStackTrace();
         }
         if (!gps_enabled && !network_enabled) {
-            new AlertDialog.Builder(Splash. this )
-                    .setMessage( "Location Enable" )
-                    .setPositiveButton( "Settings" , new
+            new AlertDialog.Builder(Splash.this)
+                    .setMessage("Location Enable")
+                    .setPositiveButton("Settings", new
                             DialogInterface.OnClickListener() {
                                 @Override
-                                public void onClick (DialogInterface paramDialogInterface , int paramInt) {
-                                    startActivity( new Intent(Settings. ACTION_LOCATION_SOURCE_SETTINGS )) ;
+                                public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+                                    startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
 
                                     //Init();
                                 }
@@ -227,11 +204,10 @@ public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
                             Toast.makeText(getApplicationContext(), "please set ON your location", Toast.LENGTH_SHORT).show();
                         }
                     })
-                    .show() ;
+                    .show();
 
-        }
-        else{
-            Intent i=new Intent(Splash.this,MainActivity.class);
+        } else {
+            Intent i = new Intent(Splash.this, MainActivity.class);
             startActivity(i);
             lm.removeUpdates(this);
         }

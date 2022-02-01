@@ -31,22 +31,7 @@ public class Catagories extends AppCompatActivity {
 
         initializeViews();
            //Advertisment
-        MobileAds.initialize(this,"ca-app-pub-6002206915132015~3669917621");
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               // Toast.makeText(Catagories.this,categories[position], Toast.LENGTH_SHORT).show();
-                String city=getIntent().getStringExtra("city");
-                Intent intent=new Intent(Catagories.this,Sell.class);
-                intent.putExtra("cat",catagory);
-                intent.putExtra("cit",city);
-                startActivity(intent);
 
-            }
-        });
     }
     /*
     Initialize ListView and Spinner, set their adapters and listen to spinner itemSelection events

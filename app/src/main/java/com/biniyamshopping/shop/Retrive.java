@@ -35,7 +35,7 @@ public class Retrive extends AppCompatActivity {
         mUploads = new ArrayList<>();
         mAdapter = new ImageAdapter(Retrive.this, mUploads);
         mRecyclerView.setAdapter(mAdapter);
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("dev");
         mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -49,6 +49,7 @@ public class Retrive extends AppCompatActivity {
                 mAdapter.notifyDataSetChanged();
                 // mProgressCircle.setVisibility(View.INVISIBLE);
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Toast.makeText(Retrive.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();

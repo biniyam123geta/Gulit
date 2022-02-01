@@ -13,15 +13,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.ads.AdView;
 
 public class About extends AppCompatActivity {
-TextView teleg,fac,email;String url;
+    TextView teleg, fac, email;
+    String url;
     private AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about);
-        teleg=findViewById(R.id.telg);
-        fac=findViewById(R.id.fac);
-        email=findViewById(R.id.email);
+        teleg = findViewById(R.id.telg);
+        fac = findViewById(R.id.fac);
+        email = findViewById(R.id.email);
 
         teleg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +50,7 @@ TextView teleg,fac,email;String url;
             }
         });
     }
+
     public Intent gettelegram() {
         try {
             getPackageManager().getPackageInfo("org.telegram.messenger", 0);
@@ -57,14 +60,15 @@ TextView teleg,fac,email;String url;
         }
     }
 
-        public Intent getOpenFacebookIntent() {
-            try {
-                getPackageManager().getPackageInfo("com.facebook.katana", 0);
-                return new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/426253597411506"));
-            } catch (Exception e) {
-                return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Gulit-%E1%8C%89%E1%88%8A%E1%89%B5-Online-SHOP"));
-            }
+    public Intent getOpenFacebookIntent() {
+        try {
+            getPackageManager().getPackageInfo("com.facebook.katana", 0);
+            return new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/426253597411506"));
+        } catch (Exception e) {
+            return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Gulit-%E1%8C%89%E1%88%8A%E1%89%B5-Online-SHOP"));
         }
+    }
+
     protected void sendEmail() {
         Log.i("Send email", "");
         String[] TO = {""};

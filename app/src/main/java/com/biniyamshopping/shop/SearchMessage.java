@@ -11,11 +11,11 @@ public class SearchMessage {
     String price;
     String mkey;
 
-    public SearchMessage(){
+    public SearchMessage() {
 
     }
 
-public SearchMessage (String price,String cat, String cit, String desc, String imageName, String imageURL, String cond, String type, String phone) {
+    public SearchMessage(String price, String cat, String cit, String desc, String imageName, String imageURL, String cond, String type, String phone) {
         this.cat = cat;
         this.cit = cit;
         this.desc = desc;
@@ -24,7 +24,7 @@ public SearchMessage (String price,String cat, String cit, String desc, String i
         this.phone = phone;
         this.imageName = imageName;
         this.imageURL = imageURL;
-        this.price=price;
+        this.price = price;
     }
 
     public String getPrice() {
@@ -98,10 +98,12 @@ public SearchMessage (String price,String cat, String cit, String desc, String i
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
     }
+
     @Exclude
     public String getKey() {
         return mkey;
     }
+
     @Exclude
     public void setKey(String key) {
         mkey = key;

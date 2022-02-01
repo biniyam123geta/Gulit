@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_app_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:paddingStart="0dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:contentInsetLeft="0dp"
+        android:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:contentInsetRight="0dp"
+        android:contentInsetEnd="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/button_back"
+                android:background="@drawable/ripple_button_background"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitXY"
+                android:padding="9dp"
+                android:tint="@color/colorPrimary"
+                app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.chootdev.typefaced.TypeFacedTextView
+                    android:text="Details"
+                    android:id="@+id/tv_toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    app:textView_font="Overpass-Bold.ttf"/>
+
+                <com.chootdev.typefaced.TypeFacedTextView
+                    android:id="@+id/tv_toolbar_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    app:textView_font="Overpass-Regular.ttf"/>
+
+            </LinearLayout>
+
+            <com.chootdev.typefaced.TypeFacedTextView
+                android:id="@+id/button_selected_lang"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/ripple_button_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                app:textView_font="Overpass-Regular.ttf"/>
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+</com.google.android.material.appbar.AppBarLayout>

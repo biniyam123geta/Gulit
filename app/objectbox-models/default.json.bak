@@ -1,0 +1,161 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:8385982023787207437",
+      "lastPropertyId": "13:1795347103183662006",
+      "name": "Messages",
+      "properties": [
+        {
+          "id": "1:6611740633755919539",
+          "name": "cat",
+          "type": 9
+        },
+        {
+          "id": "2:2042116255839230742",
+          "name": "cit",
+          "type": 9
+        },
+        {
+          "id": "3:5079640328532641780",
+          "name": "desc",
+          "type": 9
+        },
+        {
+          "id": "4:4505026125119458712",
+          "name": "cond",
+          "type": 9
+        },
+        {
+          "id": "5:1684668138733332598",
+          "name": "type",
+          "type": 9
+        },
+        {
+          "id": "6:7352354305635430791",
+          "name": "phone",
+          "type": 9
+        },
+        {
+          "id": "7:3503579041680968043",
+          "name": "imageName",
+          "type": 9
+        },
+        {
+          "id": "8:4022591276081093492",
+          "name": "imageURL",
+          "type": 9
+        },
+        {
+          "id": "9:400856597733317530",
+          "name": "price",
+          "type": 9
+        },
+        {
+          "id": "10:1064041927179683815",
+          "name": "mkey",
+          "type": 9
+        },
+        {
+          "id": "12:1732284165389299919",
+          "name": "_id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "13:1795347103183662006",
+          "name": "id",
+          "type": 6,
+          "flags": 2
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:396928683218195275",
+      "lastPropertyId": "13:1283952566266482678",
+      "name": "CartMessage",
+      "properties": [
+        {
+          "id": "1:2059647562457544008",
+          "name": "cat",
+          "type": 9
+        },
+        {
+          "id": "2:379649259465085054",
+          "name": "cit",
+          "type": 9
+        },
+        {
+          "id": "3:6449079789971565164",
+          "name": "desc",
+          "type": 9
+        },
+        {
+          "id": "4:1738188468395757766",
+          "name": "cond",
+          "type": 9
+        },
+        {
+          "id": "5:928909661450672137",
+          "name": "type",
+          "type": 9
+        },
+        {
+          "id": "6:6664066751819002064",
+          "name": "phone",
+          "type": 9
+        },
+        {
+          "id": "7:7837996765580259152",
+          "name": "imageName",
+          "type": 9
+        },
+        {
+          "id": "8:973550670834913432",
+          "name": "imageURL",
+          "type": 9
+        },
+        {
+          "id": "9:7442494392132594898",
+          "name": "price",
+          "type": 9
+        },
+        {
+          "id": "10:7037297707845012218",
+          "name": "mkey",
+          "type": 9
+        },
+        {
+          "id": "12:7956191524758211542",
+          "name": "_id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "13:1283952566266482678",
+          "name": "id",
+          "type": 6,
+          "flags": 2
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "2:396928683218195275",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    8432773005660028313,
+    2871275656060655793
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}

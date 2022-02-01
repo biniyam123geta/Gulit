@@ -13,28 +13,30 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
 public class Where extends AppCompatActivity {
-    RadioButton adis,adama,bahir,dire,hawasa,gondar,mekele;
+    RadioButton adis, adama, bahir, dire, hawasa, gondar, mekele;
     Button select;
-    String city="";
-String str="";
+    String city = "";
+    String str = "";
     private AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.where);
-getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        MobileAds.initialize(this,"ca-app-pub-6002206915132015~3669917621");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        MobileAds.initialize(this, "ca-app-pub-6002206915132015~3669917621");
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-        adis = (RadioButton)findViewById(R.id.addis);
-        select=(Button) findViewById(R.id.select);
-        adama = (RadioButton)findViewById(R.id.adama);
-        bahir = (RadioButton)findViewById(R.id.bahir);
-        dire = (RadioButton)findViewById(R.id.dire);
-        hawasa = (RadioButton)findViewById(R.id.hawasa);
-        gondar = (RadioButton)findViewById(R.id.gondar);
-        mekele = (RadioButton)findViewById(R.id.mekele);
+        adis = (RadioButton) findViewById(R.id.addis);
+        select = (Button) findViewById(R.id.select);
+        adama = (RadioButton) findViewById(R.id.adama);
+        bahir = (RadioButton) findViewById(R.id.bahir);
+        dire = (RadioButton) findViewById(R.id.dire);
+        hawasa = (RadioButton) findViewById(R.id.hawasa);
+        gondar = (RadioButton) findViewById(R.id.gondar);
+        mekele = (RadioButton) findViewById(R.id.mekele);
+
         select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,41 +49,39 @@ getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             }
         });
     }
+
     public void radioaction(View view) {
         boolean checked = ((RadioButton) view).isChecked();
-
         // Check which radio button was clicked
-        switch(view.getId()) {
+        switch (view.getId()) {
             case R.id.addis:
-                if(checked)
+                if (checked)
                     str = "Addis Ababa";
                 break;
             case R.id.adama:
-                if(checked)
+                if (checked)
                     str = "Adama";
                 break;
             case R.id.bahir:
-                if(checked)
+                if (checked)
                     str = "Bahir Dar";
                 break;
             case R.id.dire:
-                if(checked)
+                if (checked)
                     str = "Dire Dawa";
                 break;
             case R.id.hawasa:
-                if(checked)
+                if (checked)
                     str = "Awassa";
                 break;
             case R.id.gondar:
-                if(checked)
+                if (checked)
                     str = "Gondar";
                 break;
             case R.id.mekele:
-                if(checked)
+                if (checked)
                     str = "Mekele";
                 break;
-           }
-      //Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
-
+        }
     }
 }

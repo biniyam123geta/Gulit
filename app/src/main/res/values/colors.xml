@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#4abfd4</color>
     <color name="colorPrimaryDark">#4abfd4</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#1f1d1d</color>
     <color name="white">#FFFFFF</color>
     <color name="signupColor">#066e8a</color>
     <color name="green">#00bfa5</color>
@@ -19,5 +19,4 @@
     <color name="green1">#32CD32</color>
     <color name="red">#FF0000</color>
     <color name="viewBg">#f1f5f8</color>
-
 </resources>

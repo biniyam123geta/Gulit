@@ -21,7 +21,7 @@ public class Search extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private SearchAdapter mAdapter;
     private ImageButton mSearchBtn;
-   private  EditText searchfield;
+    private EditText searchfield;
     private DatabaseReference mDatabaseRef;
 
     @Override

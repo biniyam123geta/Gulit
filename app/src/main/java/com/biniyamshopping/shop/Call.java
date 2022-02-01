@@ -14,6 +14,7 @@ import androidx.core.content.ContextCompat;
 
 public class Call extends AppCompatActivity {
     private static final int REQUEST_CALL = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,8 +22,9 @@ public class Call extends AppCompatActivity {
 
         makePhoneCall();
     }
+
     private void makePhoneCall() {
-        String number= getIntent().getStringExtra("value");
+        String number = getIntent().getStringExtra("value");
         if (number.trim().length() > 0) {
             if (ContextCompat.checkSelfPermission(Call.this,
                     Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
@@ -36,6 +38,7 @@ public class Call extends AppCompatActivity {
             Toast.makeText(Call.this, "Enter Phone Number", Toast.LENGTH_SHORT).show();
         }
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == REQUEST_CALL) {

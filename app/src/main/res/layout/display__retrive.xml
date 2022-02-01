@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Retrive">
+    tools:context=".Display_Retrive">
 
-
+    <include layout="@layout/app_bar_layout" />
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="50dp"
         android:id="@+id/recyclerdisplay"
         android:layout_width="409dp"
         android:layout_height="729dp"

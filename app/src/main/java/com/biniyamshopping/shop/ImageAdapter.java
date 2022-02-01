@@ -19,55 +19,49 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
-    String addres=null;
+    String addres = null;
+    String bini = "";
     private DatabaseReference mDatabaseRef;
-    private Context mContext;
-    private List<Messages> mUploads;
+    private final Context mContext;
+    private final List<Messages> mUploads;
 
-    String bini="";
     public ImageAdapter(Context context, List<Messages> uploads) {
         mContext = context;
         mUploads = uploads;
     }
+
     @Override
     public ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(mContext).inflate(R.layout.message_item, parent, false);
-        //Toast.makeText(mContext, addres, Toast.LENGTH_SHORT).show();
         return new ImageViewHolder(v);
     }
+
     @Override
     public void onBindViewHolder(ImageViewHolder holder, int position) {
-       // fc.removeLocationUpdates(locationCallback);
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
+        Messages uploadCurrent = mUploads.get(position);
+        String c = uploadCurrent.getCit();
+        holder.textViewName.setText(uploadCurrent.getImageName());
+        bini = uploadCurrent.getImageName();
+        holder.price.setText("Price:" + uploadCurrent.getPrice());
+        Picasso.get()
+                .load(uploadCurrent.getImageURL())
+                .placeholder(R.drawable.loadimage)
+                .fit()
+                .centerInside()
+                .into(holder.imageView);
 
-
-                            Messages uploadCurrent = mUploads.get(position);
-                            String c=uploadCurrent.getCit();
-                            //Toast.makeText(mContext,c,Toast.LENGTH_SHORT).show();
-
-                                holder.textViewName.setText(uploadCurrent.getImageName());
-                                bini=uploadCurrent.getImageName();
-                                holder.price.setText("Price:"+uploadCurrent.getPrice());
-                                Picasso.get()
-                                        .load(uploadCurrent.getImageURL())
-                                        .placeholder(R.drawable.loadimage)
-                                        .fit()
-                                        .centerInside()
-                                        //.centerCrop()
-                                        .into(holder.imageView);
-
-                            holder.imageView.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    Messages selecteditem=mUploads.get(position);
-                                    final String  selectedkey=selecteditem.getKey();
-                                    Intent i=new Intent(mContext,Display_Retrive.class);
-                                    i.putExtra("value",selectedkey);
-                                    i.putExtra("position",position);
-                                    mContext.startActivity(i);
-                                }
-                            });
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 String selectedkey = uploadCurrent.getKey();
+                Intent i = new Intent(mContext, Display_Retrive.class);
+                i.putExtra("value", selectedkey);
+                mContext.startActivity(i);
+            }
+        });
     }
+
     @Override
     public int getItemCount() {
         return mUploads.size();
@@ -75,21 +69,18 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
 
     public class ImageViewHolder extends RecyclerView.ViewHolder {
-        public TextView textViewName,textViewName1,imageView1;
-        public TextView price,price1;
+        public TextView textViewName, textViewName1, imageView1;
+        public TextView price, price1;
         public LinearLayout lin;
         public ImageView imageView;
         public CardView card;
+
         public ImageViewHolder(View itemView) {
             super(itemView);
-            //itemView.setOnClickListener(ImageAdapter.this);
-            card=itemView.findViewById(R.id.card);
-            price=itemView.findViewById(R.id.price);
+            card = itemView.findViewById(R.id.card);
+            price = itemView.findViewById(R.id.price);
             textViewName = itemView.findViewById(R.id.imgtitle);
             imageView = itemView.findViewById(R.id.imgfirbase);
-            //price1=itemView.findViewById(R.id.price1);
-           // textViewName1 = itemView.findViewById(R.id.imgtitle1);
-          //  imageView1= itemView.findViewById(R.id.imgfirbase1);
         }
     }
 

@@ -2,17 +2,23 @@ package com.biniyamshopping.shop;
 
 import com.google.firebase.database.Exclude;
 
+import io.objectbox.annotation.Entity;
+import io.objectbox.annotation.Id;
+
+@Entity
 public class CartMessage {
     String cat, cit, desc, cond, type, phone;
     String imageName;
     String imageURL;
     String price;
     String mkey;
+    @Id
+    private long _id;
     public CartMessage() {
 
     }
 
-    public CartMessage(String price,String cat, String cit, String desc, String imageName, String imageURL, String cond, String type, String phone) {
+    public CartMessage(String price, String cat, String cit, String desc, String imageName, String imageURL, String cond, String type, String phone) {
         this.cat = cat;
         this.cit = cit;
         this.desc = desc;
@@ -21,7 +27,17 @@ public class CartMessage {
         this.phone = phone;
         this.imageName = imageName;
         this.imageURL = imageURL;
-        this.price=price;
+        this.price = price;
+    }
+
+
+
+    public long get_id() {
+        return _id;
+    }
+
+    public void set_id(long _id) {
+        this._id = _id;
     }
 
     public String getPrice() {
@@ -95,10 +111,12 @@ public class CartMessage {
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
     }
+
     @Exclude
     public String getKey() {
         return mkey;
     }
+
     @Exclude
     public void setKey(String key) {
         mkey = key;
