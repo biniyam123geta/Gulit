@@ -91,15 +91,17 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="20dp"
-
+                    android:gravity="center"
                     android:fontFamily="sans-serif"
-                    android:textSize="14sp"
-                    android:text="Gulit is  technology platform in Ethiopia.\n Gulit acts as an intermediary between seller and buyer.\n
+                    android:textSize="18sp"
+                    android:text="Gulit is  technology platform in Ethiopia. Gulit acts as an intermediary between seller and buyer.
 
-Gulit is safe and easy to use with android phone.user can be post their product \nwith out any payment and connect to their custemer and great search \n function lets you find products items
+Gulit is safe and easy to use with android phone.user can be post their product with out any payment and connect to their custemer and great search \n function lets you find products items
 "
                     android:textColor="@color/bl"
                     />

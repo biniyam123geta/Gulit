@@ -1,79 +1,42 @@
 {
   "project_info": {
-    "project_number": "1024293989646",
-    "firebase_url": "https://shop-e99fd.firebaseio.com",
-    "project_id": "shop-e99fd",
-    "storage_bucket": "shop-e99fd.appspot.com"
+    "project_number": "880087182754",
+    "firebase_url": "https://gulit-65f71-default-rtdb.firebaseio.com",
+    "project_id": "gulit-65f71",
+    "storage_bucket": "gulit-65f71.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1024293989646:android:d9171303b055f712277b5f",
+        "mobilesdk_app_id": "1:880087182754:android:2b427807d9a868e3ca56fb",
         "android_client_info": {
-          "package_name": "com.biniyamshopping.shop"
+          "package_name": "com.gulitshopping.shop"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1024293989646-uusrrgahrljtj3eau6hpr09h5h0qtakf.apps.googleusercontent.com",
+          "client_id": "880087182754-lbtim4a42i4dlpmf3fdl926e1conrkgg.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.biniyamshopping.shop",
-            "certificate_hash": "e347afaccce1cb9932ccd27611662c6249fc94d4"
+            "package_name": "com.gulitshopping.shop",
+            "certificate_hash": "bc7488003b32161fb7910555308694dced533c3e"
           }
         },
         {
-          "client_id": "1024293989646-bl7d0g11h5fldakjcgbovhad5qrsdsfh.apps.googleusercontent.com",
+          "client_id": "880087182754-o5n1a7vnc7c524qqeuqcj8viv2jdeqg6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCHGen3b2pJp3-hwIZP-WkNBmWF8-ARK1A"
+          "current_key": "AIzaSyBrrTU7i6gu_pd13ikQ4nLT9pZYR-c_8fY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1024293989646-bl7d0g11h5fldakjcgbovhad5qrsdsfh.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1024293989646:android:30e450200d25335d277b5f",
-        "android_client_info": {
-          "package_name": "com.shopping.shop"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1024293989646-o5sveubnf3uk17a7703lcf2mia745a6d.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.shopping.shop",
-            "certificate_hash": "e347afaccce1cb9932ccd27611662c6249fc94d4"
-          }
-        },
-        {
-          "client_id": "1024293989646-bl7d0g11h5fldakjcgbovhad5qrsdsfh.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCHGen3b2pJp3-hwIZP-WkNBmWF8-ARK1A"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1024293989646-bl7d0g11h5fldakjcgbovhad5qrsdsfh.apps.googleusercontent.com",
+              "client_id": "880087182754-o5n1a7vnc7c524qqeuqcj8viv2jdeqg6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

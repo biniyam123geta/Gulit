@@ -320,5 +320,4 @@
             </RelativeLayout>
         </androidx.core.widget.NestedScrollView>
     </LinearLayout>
-
 </FrameLayout>

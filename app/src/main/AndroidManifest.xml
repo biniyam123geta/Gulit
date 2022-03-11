@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.biniyamshopping.shop">
+    package="com.gulitshopping.shop">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -18,30 +18,27 @@
         android:roundIcon="@drawable/shoplogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-6002206915132015~3669917621" />
-        <activity android:name=".abut" />
-        <activity android:name=".Call" />
-        <activity android:name=".About" />
-        <activity android:name=".Home" />
-        <activity android:name=".Search" />
-        <activity android:name=".Display_Retrive"
+        <activity android:name="com.gulitshopping.shop.abut" />
+        <activity android:name="com.gulitshopping.shop.Call" />
+        <activity android:name="com.gulitshopping.shop.About" />
+        <activity android:name="com.gulitshopping.shop.Home" />
+        <activity android:name="com.gulitshopping.shop.Search" />
+        <activity android:name="com.gulitshopping.shop.Display_Retrive"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Retrive" />
-        <activity android:name=".DisplayCartRetrive"
+        <activity android:name="com.gulitshopping.shop.Retrive" />
+        <activity android:name="com.gulitshopping.shop.DisplayCartRetrive"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".Catagories"
-            android:parentActivityName=".Where" />
+            android:name="com.gulitshopping.shop.Catagories"
+            android:parentActivityName="com.gulitshopping.shop.Where" />
         <activity
-            android:name=".Sell"
-            android:parentActivityName=".Catagories" />
-        <activity android:name=".MainActivity" />
+            android:name="com.gulitshopping.shop.Sell"
+            android:parentActivityName="com.gulitshopping.shop.Catagories" />
+        <activity android:name="com.gulitshopping.shop.MainActivity" />
         <activity
-            android:name=".Where"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".Splash">
+            android:name="com.gulitshopping.shop.Where"
+            android:parentActivityName="com.gulitshopping.shop.MainActivity" />
+        <activity android:name="com.gulitshopping.shop.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

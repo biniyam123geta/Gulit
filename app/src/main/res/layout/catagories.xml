@@ -36,18 +36,5 @@
         android:layout_below="@+id/mySpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adView"
 
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:layout_alignParentBottom="true"
-        ads:adSize="BANNER"
-        android:layout_below="@id/myListView"
-        ads:adUnitId="ca-app-pub-6002206915132015/6595463865">
-    </com.google.android.gms.ads.AdView>
 </RelativeLayout>

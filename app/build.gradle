@@ -5,12 +5,12 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
     defaultConfig {
-        applicationId "com.biniyamshopping.shop"
+        applicationId "com.gulitshopping.shop"
         minSdkVersion 21
         targetSdkVersion 29
         multiDexEnabled true
         versionCode 3
-        versionName "3.0"
+        versionName "3.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -27,9 +27,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     implementation 'androidx.appcompat:appcompat:1.2.0'
-
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'com.google.firebase:firebase-auth:16.0.5'
@@ -53,7 +51,6 @@ dependencies {
     implementation 'io.paperdb:paperdb:2.5'
     implementation "androidx.vectordrawable:vectordrawable-animated:1.1.0"
     implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc02"
-    implementation 'com.google.android.gms:play-services-ads:17.1.1'
     implementation 'com.google.firebase:firebase-core:16.0.8'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'com.hbb20:ccp:2.1.9'
