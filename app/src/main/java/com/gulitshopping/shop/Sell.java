@@ -386,7 +386,7 @@ public class Sell extends AppCompatActivity {
 
            }
 
-       } catch (FileNotFoundException | OutOfMemoryError e) {
+       } catch (Exception e) {
            e.printStackTrace();
            return null;
        }

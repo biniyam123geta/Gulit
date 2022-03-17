@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
             super.onCodeSent(s, forceResendingToken);
-
             codeSent = s;
         }
     };
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (NullPointerException e) {
         }
         setContentView(R.layout.activity_main);
-        ObjectBox.init(this);
+
         requestPermissions();
         mAuth = FirebaseAuth.getInstance();
         p=findViewById(R.id.progress_bar);
