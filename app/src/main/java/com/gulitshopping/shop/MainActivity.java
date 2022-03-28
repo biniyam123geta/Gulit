@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.gulitshopping.EmailLoginActivity;
 import com.gulitshopping.shop.DbService.HomeShopDbService.HomeDbService;
 import com.gulitshopping.shop.Utils.PermissionUtils;
 import com.gulitshopping.shop.offline.ObjectBox;
@@ -40,12 +41,14 @@ public class MainActivity extends AppCompatActivity {
     EditText entervarcode, phone;
     FirebaseAuth mAuth;
     String codeSent;
-    Button guest;
+    Button email;
     CountryCodePicker ccp;
     String codesent;
     private DatabaseReference mDatabaseRef;
     private LinearLayout p;
     private final int REQUEST_PERMISSIONS = 1000;
+    private FirebaseAuth.AuthStateListener authListener;
+
     PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
         @Override
@@ -65,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             codeSent = s;
         }
     };
-    private FirebaseAuth.AuthStateListener authListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         p=findViewById(R.id.progress_bar);
         entervarcode = findViewById(R.id.entercode);
-       // guest = findViewById(R.id.guest);
+        email = findViewById(R.id.email);
         ccp = (CountryCodePicker) findViewById(R.id.cpp);
         phone = findViewById(R.id.phone);
         ccp.registerCarrierNumberEditText(phone);
@@ -123,7 +126,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        email.setOnClickListener(v->{
+            Intent i = new Intent(MainActivity.this, EmailLoginActivity.class);
+            startActivity(i);
+        });
         findViewById(R.id.submit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,15 +142,15 @@ public class MainActivity extends AppCompatActivity {
         });
 //        guest.setOnClickListener(new View.OnClickListener() {
 //            @Override
-//            public void onClick(View v) {
-//
-//                Intent i = new Intent(MainActivity.this, Home.class);
-//                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                i.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-//                i.putExtra("val", "1");
-//                startActivity(i);
-//            }
-//        });
+////            public void onClick(View v) {
+////
+////                Intent i = new Intent(MainActivity.this, Home.class);
+////                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+////                i.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+////                i.putExtra("val", "1");
+////                startActivity(i);
+////            }
+////        });
     }
 
     @Override

@@ -2,13 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gulitshopping.shop">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".app.Gulit"
@@ -18,27 +17,30 @@
         android:roundIcon="@drawable/gulit"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.gulitshopping.shop.abut" />
-        <activity android:name="com.gulitshopping.shop.Call" />
-        <activity android:name="com.gulitshopping.shop.About" />
-        <activity android:name="com.gulitshopping.shop.Home" />
-        <activity android:name="com.gulitshopping.shop.Search" />
-        <activity android:name="com.gulitshopping.shop.Display_Retrive"
+        <activity android:name="com.gulitshopping.EmailLoginActivity"></activity>
+        <activity android:name=".abut" />
+        <activity android:name=".Call" />
+        <activity android:name=".About" />
+        <activity android:name=".Home" />
+        <activity android:name=".Search" />
+        <activity
+            android:name=".Display_Retrive"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.gulitshopping.shop.Retrive" />
-        <activity android:name="com.gulitshopping.shop.DisplayCartRetrive"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Retrive" />
         <activity
-            android:name="com.gulitshopping.shop.Catagories"
-            android:parentActivityName="com.gulitshopping.shop.Where" />
+            android:name=".DisplayCartRetrive"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.gulitshopping.shop.Sell"
-            android:parentActivityName="com.gulitshopping.shop.Catagories" />
-        <activity android:name="com.gulitshopping.shop.MainActivity" />
+            android:name=".Catagories"
+            android:parentActivityName=".Where" />
         <activity
-            android:name="com.gulitshopping.shop.Where"
-            android:parentActivityName="com.gulitshopping.shop.MainActivity" />
-        <activity android:name="com.gulitshopping.shop.Splash">
+            android:name=".Sell"
+            android:parentActivityName=".Catagories" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".Where"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
